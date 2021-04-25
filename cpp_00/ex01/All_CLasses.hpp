@@ -6,11 +6,8 @@
 class Contact {
 public:
     Contact(void);
-    ~Contact(void);
     
-    static int get_nb_inst(void);
-    
-    int         index;
+    int         flag;
     std::string first_name;
     std::string last_name;
     std::string nick_name;
@@ -22,9 +19,6 @@ public:
     std::string favorite_meal;
     std::string underwear_color;
     std::string darkest_secret;
-
-private:
-    static int _nb_inst;
 };
 
 #endif
