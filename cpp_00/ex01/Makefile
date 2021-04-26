@@ -1,5 +1,5 @@
 SRCS =			./main.cpp \
-				./Contact_class.cpp \
+				./Contact.cpp \
 				./ft_add.cpp \
 				./ft_exit.cpp \
 				./ft_search.cpp \
