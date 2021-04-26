@@ -7,7 +7,7 @@ class Contact {
 public:
     Contact(void);
     
-    int         flag;
+    bool         flag;
     std::string first_name;
     std::string last_name;
     std::string nick_name;
