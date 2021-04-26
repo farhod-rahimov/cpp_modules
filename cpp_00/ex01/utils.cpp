@@ -40,6 +40,7 @@ int ft_get_replace_index(void)
     std::cout << "Which contact do you want to replace? Write the index between 0 and 7" << std::endl;
     std::cin >> str;
     str.copy(&tmp, 1, 0);
+    replace_index = std::atoi(str.data());
     ft_print_split_line();
 
     while (tmp < 48 || tmp > 57 || replace_index < 0 || replace_index >= NUM_CONTACTS)

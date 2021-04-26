@@ -1,6 +1,6 @@
 #ifndef PHONE_BOOK_HPP
 # define PHONE_BOOK_HPP
-# define NUM_CONTACTS 1
+# define NUM_CONTACTS 8
 
 #include <iomanip>
 #include "Contact_class.hpp"
