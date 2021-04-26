@@ -2,7 +2,8 @@
 
 static int ft_get_index(int flag)
 {
-    int index;
+    std::string str;
+    char tmp;
 
     if (flag == 1)
         std::cout << "Error. INDEX should be between 0 and 7! ";
@@ -10,9 +11,12 @@ static int ft_get_index(int flag)
         std::cout << "Error. Choosed INDEX doesn't exist. ";
     if (flag)
         std::cout << "Try again!" << std::endl;
-    std::cin >> index;
+    std::cin >> str;
     std::cout << "-------------------------------------------" << std::endl;
-    return (index);
+    str.copy(&tmp, 1, 0);
+    if (tmp <= 48 || tmp >= 57)
+        return (-1);
+    return (std::atoi(str.data()));
 }
 
 static void ft_review_contact(Contact contact, int i)
