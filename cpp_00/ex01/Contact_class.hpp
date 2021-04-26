@@ -1,7 +1,7 @@
 #include <iostream>
 
-#ifndef ALL_CLASSESS_HPP
-# define ALL_CLASSESS_HPP
+#ifndef CONTACT_CLASS_HPP
+# define CONTACT_CLASS_HPP
 
 class Contact {
 public:
