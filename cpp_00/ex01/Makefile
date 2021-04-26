@@ -2,7 +2,8 @@ SRCS =			./main.cpp \
 				./Contact_class.cpp \
 				./ft_add.cpp \
 				./ft_exit.cpp \
-				./ft_search.cpp
+				./ft_search.cpp \
+				./utils.cpp
 
 OBJS =			$(SRCS:.cpp=.o)
 
