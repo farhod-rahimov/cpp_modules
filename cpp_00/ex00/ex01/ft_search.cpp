@@ -21,51 +21,59 @@ int ft_get_index(int flag)
 
 static void ft_review_contact(Contact contact, int i)
 {
-    std::string first_name;
-    std::string last_name;
-    std::string nick_name;
+    std::string data;
+    std::string tmp;
 
     std::cout << std::setw(10) << i << "|";
-    if (contact.first_name.length() > 10)
+
+    data = contact.get_data(0); // 0 - first_name
+    if (data.length() > 10)
     {
-        first_name = contact.first_name.substr(0, 9);
-        std::cout << std::setw(9) << first_name << ".|";
+        tmp = data.substr(0, 9);
+        std::cout << std::setw(9) << tmp << ".|";
     }
     else
-        std::cout << std::setw(10) << contact.first_name << "|";
-    if (contact.last_name.length() > 10)
+        std::cout << std::setw(10) << data << "|";
+    
+    data = contact.get_data(1); // 1 - last_name
+    if (data.length() > 10) 
     {
-        last_name = contact.last_name.substr(0, 9);
-        std::cout << std::setw(9) << last_name << ".|";
+        tmp = data.substr(0, 9);
+        std::cout << std::setw(9) << tmp << ".|";
     }
     else
-        std::cout << std::setw(10) << contact.last_name << "|";
-    if (contact.nick_name.length() > 10)
+        std::cout << std::setw(10) << data << "|";
+    
+    data = contact.get_data(2); // 2 - nick_name
+    if (data.length() > 10)
     {
-        nick_name = contact.nick_name.substr(0, 9);
-        std::cout << std::setw(9) << nick_name << "." << std::endl;
+        tmp = data.substr(0, 9);
+        std::cout << std::setw(9) << tmp << "." << std::endl;
     }
     else
-        std::cout << std::setw(10) << contact.nick_name << std::endl;
+        std::cout << std::setw(10) << data << std::endl;
 }
 
 static void ft_show_choosed_contact(Contact contact, int index)
 {
+    int i;
+
+    i = 0;
     system("clear");
     ft_print_split_line();
     std::cout << "SHOWING THE CONTACT WITH INDEX " << index << std::endl;
     ft_print_split_line();
-    std::cout << "First name: " << contact.first_name << std::endl;
-    std::cout << "Last name: " << contact.last_name << std::endl;
-    std::cout << "Nick name: " << contact.nick_name << std::endl;
-    std::cout << "Login: " << contact.login << std::endl;
-    std::cout << "Postal address: " << contact.postal_address << std::endl;
-    std::cout << "Email address: " << contact.email_address << std::endl;
-    std::cout << "Phone number: " << contact.phone_number << std::endl;
-    std::cout << "Birth date: " << contact.birth_date << std::endl;
-    std::cout << "Favorite meal: " << contact.favorite_meal << std::endl;
-    std::cout << "Underwear color: " << contact.underwear_color << std::endl;
-    std::cout << "Darkest secret: " << contact.darkest_secret << std::endl;
+    std::cout << "First name: " << contact.get_data(i++) << std::endl;
+    std::cout << "Last name: " << contact.get_data(i++) << std::endl;
+    std::cout << "Nick name: " << contact.get_data(i++) << std::endl;
+    std::cout << "Login: " << contact.get_data(i++) << std::endl;
+    std::cout << "Postal address: " << contact.get_data(i++) << std::endl;
+    std::cout << "Email address: " << contact.get_data(i++) << std::endl;
+    std::cout << "Phone number: " << contact.get_data(i++) << std::endl;
+    std::cout << "Birth date: " << contact.get_data(i++) << std::endl;
+    std::cout << "Favorite meal: " << contact.get_data(i++) << std::endl;
+    std::cout << "Underwear color: " << contact.get_data(i++) << std::endl;
+    std::cout << "Darkest secret: " << contact.get_data(i++) << std::endl;
     ft_print_split_line();
 }
 
