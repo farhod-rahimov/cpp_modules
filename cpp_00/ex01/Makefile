@@ -1,7 +1,6 @@
 SRCS =			./main.cpp \
 				./Contact.cpp \
 				./ft_add.cpp \
-				./ft_exit.cpp \
 				./ft_search.cpp \
 				./utils.cpp
 

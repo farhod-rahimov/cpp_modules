@@ -3,7 +3,6 @@
 int ft_get_index(int flag)
 {
     std::string str;
-    char tmp;
 
     if (flag == 1)
         std::cout << "Error. INDEX should be between 0 and 7! ";
@@ -11,10 +10,9 @@ int ft_get_index(int flag)
         std::cout << "Error. Choosed INDEX doesn't exist. ";
     if (flag)
         std::cout << "Try again!" << std::endl;
-    std::cin >> str;
+    std::getline(std::cin, str, '\n');
     ft_print_split_line();
-    str.copy(&tmp, 1, 0);
-    if (tmp < 48 || tmp > 57)
+    if (ft_check_if_index_is_correct(str) < 0)
         return (-1);
     return (std::atoi(str.data()));
 }
@@ -83,7 +81,7 @@ void ft_search(Contact contacts[NUM_CONTACTS])
     int i;
 
     i = 0;
-    if (!contacts[0].flag)
+    if (!contacts[0].is_contact_filled())
     {
         std::cout << "PHONE BOOK IS EMPTY!" << std::endl;
         ft_print_split_line();
@@ -94,7 +92,7 @@ void ft_search(Contact contacts[NUM_CONTACTS])
     ft_print_split_line();
     while (i < NUM_CONTACTS)
     {
-        if (contacts[i].flag)
+        if (contacts[i].is_contact_filled())
             ft_review_contact(contacts[i], i);
         i++;
     }
@@ -105,7 +103,7 @@ void ft_search(Contact contacts[NUM_CONTACTS])
     {
         if (index < 0 || index >= NUM_CONTACTS)
             index = ft_get_index(1);
-        else if (!contacts[index].flag)
+        else if (!contacts[index].is_contact_filled())
             index = ft_get_index(2);
         else
             break ;

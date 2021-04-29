@@ -5,14 +5,16 @@
 
 class Contact {
 private:
-    std::string data[11];
+    std::string _data[11];
+    bool        _flag;
 
 public:
     Contact(void);
     
-    bool        flag;
     void        set_data(int i, std::string src);
     std::string get_data(int i);
+    void        set_flag(bool flag);
+    bool        is_contact_filled(void);
 };
 
 #endif

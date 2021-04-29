@@ -13,9 +13,18 @@ int     main(void)
     while (1)
     {
         ft_show_available_commands();
-        command = ft_get_command();
+        std::getline(std::cin, command, '\n');
+        if (std::cin.eof())
+        {
+            std::cout << "BYE BYE!\n";
+            break ;
+        }
+        ft_print_split_line();
         if (command.compare("EXIT") == 0)
-            ft_exit();
+        {
+            std::cout << "BYE BYE!\n";
+            break ;
+        }
         else if (command.compare("ADD") == 0)
         {
             if (i >= NUM_CONTACTS)
