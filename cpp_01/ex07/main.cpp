@@ -61,27 +61,4 @@ int main(int argc, char **argv)
     }
     ifs.close();
     ofs.close();
-
-
-
-
-
-
-
-
-
-    // std::ifstream ifs("if_file");
-    // unsigned int dst;
-    // unsigned int dst2;
-    // ifs >> dst >> dst2;
-
-    // std::cout << dst << " " << dst2 << std::endl;
-    // ifs.close();
-
-    //--------------------//
-    // std::ofstream ofs("po");
-
-    // ofs << "TARARARARAAM!\n";
-    // ofs.close();
-
 }
