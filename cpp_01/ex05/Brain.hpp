@@ -9,9 +9,11 @@ private:
     int _weight;
 
 public:
+    Brain();
+    Brain(int weight);
     std::string identify(void) const;
     void setWeight(int weight);
-    int  getWeight(void);
+    int  getWeight(void) const;
 };
 
 #endif
