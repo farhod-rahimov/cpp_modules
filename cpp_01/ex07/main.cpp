@@ -27,7 +27,7 @@ void ft_replace(std::string *line, std::string s1, char  const *s2)
         counter = 0;
         i = tmp_i;
         k = 0;
-        while ((*line)[i++] == s1[k++])
+        while ((*line)[i++] == s1[k] && k++ < s1.length())
             counter++;
         if (counter == s1.length() && counter > 0)
             line->replace(tmp_i, s1.length(), s2);
@@ -40,15 +40,17 @@ int main(int argc, char **argv)
     std::ifstream   ifs;
     std::ofstream   ofs;
     std::string     tmp;
-    ft_check_args_num(argc);
 
+    ft_check_args_num(argc);
     tmp = argv[1]; tmp = tmp + ".replace";
     ifs.open(argv[1]);
-    ofs.open(tmp);
     if (!ifs.is_open())
+    {
         std::cerr << "Error. Cannot open \"" << argv[1] << "\"" << std::endl;
+        exit(1);
+    }
+    ofs.open(tmp);
 
-    std::string s1 = argv[2];
     while (!ifs.eof())
     {
         std::getline(ifs, tmp, '\n');
