@@ -16,7 +16,7 @@ Fixed::Fixed(int const int_num) {
 
 Fixed::Fixed(float const float_num) {
     std::cout << "Float constructor called" << std::endl; 
-    Fixed::_fpvalue = roundf((float_num) * 256);
+    Fixed::_fpvalue = (int)(roundf((float_num) * 256));
 
     return ;
 };
