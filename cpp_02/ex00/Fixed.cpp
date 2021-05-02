@@ -11,7 +11,7 @@ Fixed::~Fixed() {
     std::cout << "Default destructor called" << std::endl; 
 };
 
-Fixed::Fixed(Fixed &src) {
+Fixed::Fixed(Fixed const &src) {
     std::cout << "Copy constructor called" << std::endl; 
     *this = src;
 

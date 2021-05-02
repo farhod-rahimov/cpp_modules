@@ -11,7 +11,7 @@ private:
 public:
     Fixed();
     ~Fixed();
-    Fixed(Fixed &src);
+    Fixed(Fixed const &src);
 
     Fixed &operator=(Fixed const &src);
 
