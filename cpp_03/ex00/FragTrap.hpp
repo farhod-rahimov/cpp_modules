@@ -40,7 +40,3 @@ public:
 };
 
 #endif
-
-// "Hey everybody!" constructor
-// "This time it'll be awesome, I promise!" vaulthunter_dot_exe
-// "Robot down!" destructor
