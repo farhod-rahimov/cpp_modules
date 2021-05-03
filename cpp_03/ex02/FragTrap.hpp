@@ -3,7 +3,6 @@
 
 #define ARMOR_FRAG 5
 
-#include <iostream>
 #include "ClapTrap.hpp"
 
 class FragTrap : public ClapTrap {
