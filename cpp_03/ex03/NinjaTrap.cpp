@@ -61,3 +61,7 @@ void NinjaTrap::ninjaShoebox(FragTrap const &clap) {
 void NinjaTrap::ninjaShoebox(NinjaTrap const &clap) {
     std::cout << "OOOOooole-ole-ole-oleeeeee... <ninjaShoebox(ninjaTrap)>" << std::endl;
 };
+
+void NinjaTrap::ninjaShoebox(ClapTrap const &clap) {
+    std::cout << "Huhu... <ninjaShoebox(ClapTrap)>" << std::endl;
+};

@@ -35,7 +35,7 @@ public:
 
     void rangedAttack(std::string const & target);
     void meleeAttack(std::string const & target);
-    void takeDamage(unsigned int amount); // take armor damage reduction into account.
+    void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
 };
 #endif
