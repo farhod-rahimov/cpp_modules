@@ -53,7 +53,7 @@ FragTrap &FragTrap::operator=(FragTrap const &src) {
 void FragTrap::rangedAttack(std::string const & target) {
     if (this->_hit_points <= 0)
     {
-        std::cout << "Cannot do MELEEc attack because FR4G-TP IS DEAD! <rangedAttack>"<< std::endl;
+        std::cout << "Cannot do MELEE attack because FR4G-TP IS DEAD! <rangedAttack>"<< std::endl;
         return ;
     }
     std::cout << "Bdish! FR4G-TP <" << this->_name << "> attacks <" \
