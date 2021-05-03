@@ -82,11 +82,11 @@ int main()
     ScavTrap s("Soli");
     std::string const target = "Enemy";
 
-    std::cout << "------------------FRAG_TRAP----------------" << std::endl;
+    std::cout << "\n------------------FRAG_TRAP----------------" << std::endl;
     main_1_frag(f, target);
-    main_2_frag(f, target);
-    main_3_frag(f, target);
+    // main_2_frag(f, target);
+    // main_3_frag(f, target);
 
-    std::cout << "------------------SCAV_TRAP----------------" << std::endl;
-    main_1_scav(s, target);
+    std::cout << "\n------------------SCAV_TRAP----------------" << std::endl;
+    // main_1_scav(s, target);
 }
