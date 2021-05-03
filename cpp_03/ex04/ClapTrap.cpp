@@ -47,26 +47,6 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &src) {
     return (*this);
 };
 
-void ClapTrap::rangedAttack(std::string const & target) {
-    if (this->_hit_points <= 0)
-    {
-        std::cout << "ClapTrap: Cannot do RANGED ATTACK attack because ClapTrap IS DEAD! <rangedAttack>"<< std::endl;
-        return ;
-    }
-    std::cout << "ClapTrap: Babakh...! ClapTrap <" << this->_name << "> attacks <" \
-    << target << "> at RANGE, causing <" << this->_ranged_attack_dmg << "> points of damage! <rangedAttack>" << std::endl;
-};
-
-void ClapTrap::meleeAttack(std::string const & target) {
-    if (this->_hit_points <= 0)
-    {
-        std::cout << "ClapTrap: Cannot do MELEE attack because ClapTrap IS DEAD! <melleAttack>"<< std::endl;
-        return ;
-    }
-    std::cout << "ClapTrap: Baauumm...! ClapTrap <" << this->_name << "> attacks <" \
-    << target << "> at MELEE, causing <" << this->_melee_attack_dmg << "> points of damage! <meleeAttack>" << std::endl;
-};
-
 void  ClapTrap::takeDamage(unsigned int amount) {
     int flag = 0;
     if (this->_hit_points <=0)
