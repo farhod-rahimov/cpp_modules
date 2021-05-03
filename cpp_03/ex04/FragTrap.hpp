@@ -4,8 +4,6 @@
 #include "ClapTrap.hpp"
 
 class FragTrap : virtual public ClapTrap {
-private:
-
 public:
     FragTrap();
     FragTrap(char const *name);

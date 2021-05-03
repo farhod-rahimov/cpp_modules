@@ -6,8 +6,6 @@
 #include "ScavTrap.hpp"
 
 class NinjaTrap : virtual public ClapTrap {
-private:
-
 public:
     NinjaTrap();
     NinjaTrap(char const *name);
@@ -16,7 +14,6 @@ public:
 
     NinjaTrap &operator=(NinjaTrap const &src);
     
-    void ninjaShoebox(void);
     void ninjaShoebox(ScavTrap const &clap);
     void ninjaShoebox(FragTrap const &clap);
     void ninjaShoebox(NinjaTrap const &clap);

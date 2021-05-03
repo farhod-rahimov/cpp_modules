@@ -16,7 +16,6 @@ public:
 
     NinjaTrap &operator=(NinjaTrap const &src);
     
-    void ninjaShoebox(void);
     void ninjaShoebox(ScavTrap const &clap);
     void ninjaShoebox(FragTrap const &clap);
     void ninjaShoebox(NinjaTrap const &clap);

@@ -74,7 +74,7 @@ void  ClapTrap::takeDamage(unsigned int amount) {
         std::cout << "ClapTrap: ClapTrap IS DEAD! <takeDamage>"<< std::endl;
         return ;
     }
-    std::cout << "Aaaaa...!!! " << "<ClapTrap takes " << amount << " damage!>";
+    std::cout << "ClapTrap: Aaaaa...!!! " << "<ClapTrap takes " << amount << " damage!>";
     std::cout << " | HP = " << this->_hit_points << ". Armor = " << this->_armor_dmg_reduction << " <takeDamage>" << std::endl;
     if (this->_armor_dmg_reduction > 0)
     {
