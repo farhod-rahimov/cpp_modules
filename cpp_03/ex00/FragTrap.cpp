@@ -7,17 +7,13 @@ FragTrap::FragTrap(char const *name) {
     std::cout << "Hey everybody! <constructor>" << std::endl;
     this->_hit_points = 100;
     this->_max_hit_points = 100;
-
     this->_energy_points = 100;
     this->_max_energy_points = 100;
-
     this->_level = 1;
     this->_name = name;
-
     this->_melee_attack_dmg = 30;
     this->_ranged_attack_dmg = 20;
     this->_armor_dmg_reduction = ARMOR;
-
 };
 
 FragTrap::~FragTrap() {
@@ -35,25 +31,21 @@ FragTrap &FragTrap::operator=(FragTrap const &src) {
     {
         this->_hit_points = src._hit_points;
         this->_max_hit_points = src._max_hit_points;
-
         this->_energy_points = src._energy_points;
         this->_max_energy_points = src._max_energy_points;
-
         this->_level = src._level;
         this->_name = src._name;
-
         this->_melee_attack_dmg = src._melee_attack_dmg;
         this->_ranged_attack_dmg = src._ranged_attack_dmg;
         this->_armor_dmg_reduction = src._armor_dmg_reduction;
     }
-
     return (*this);
 };
 
 void FragTrap::rangedAttack(std::string const & target) {
     if (this->_hit_points <= 0)
     {
-        std::cout << "Cannot do MELEE attack because FR4G-TP IS DEAD! <rangedAttack>"<< std::endl;
+        std::cout << "Cannot do RANGED attack because FR4G-TP IS DEAD! <rangedAttack>"<< std::endl;
         return ;
     }
     std::cout << "Bdish! FR4G-TP <" << this->_name << "> attacks <" \
