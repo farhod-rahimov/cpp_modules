@@ -1,8 +1,6 @@
 #ifndef SCAV_TRAP_HPP
 #define SCAV_TRAP_HPP
 
-#define ARMOR_SCAV 3
-
 #include <iostream>
 
 class ScavTrap {

@@ -16,8 +16,8 @@ FragTrap::FragTrap(char const *name) {
 
     this->_melee_attack_dmg = 30;
     this->_ranged_attack_dmg = 20;
-    this->_armor_dmg_reduction = ARMOR_FRAG;
-    this->_initial_armor = ARMOR_FRAG;
+    this->_armor_dmg_reduction = 5;
+    this->_initial_armor = 5;
 };
 
 FragTrap::~FragTrap() {

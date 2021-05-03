@@ -14,7 +14,7 @@ ScavTrap::ScavTrap(char const *name) {
     this->_name = name;
     this->_melee_attack_dmg = 20;
     this->_ranged_attack_dmg = 15;
-    this->_armor_dmg_reduction = ARMOR_SCAV;
+    this->_armor_dmg_reduction = 3;
 };
 
 ScavTrap::~ScavTrap() {
@@ -82,9 +82,9 @@ void  ScavTrap::takeDamage(unsigned int amount) {
         this->_armor_dmg_reduction = 0;
         flag = 1;
     }
-    if (this->_hit_points >= amount - ARMOR_SCAV && flag)
-        this->_hit_points -= amount - ARMOR_SCAV;
-    else if (this->_hit_points < amount - ARMOR_SCAV && flag)
+    if (this->_hit_points >= amount - 3 && flag)
+        this->_hit_points -= amount - 3;
+    else if (this->_hit_points < amount - 3 && flag)
         this->_hit_points = 0;
     else if (this->_hit_points >= amount && !flag)
         this->_hit_points -= amount;

@@ -1,8 +1,6 @@
 #ifndef FRAG_TRAP_HPP
 #define FRAG_TRAP_HPP
 
-#define ARMOR_FRAG 5
-
 #include "ClapTrap.hpp"
 
 class FragTrap : public ClapTrap {

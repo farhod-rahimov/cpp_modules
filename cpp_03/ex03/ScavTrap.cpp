@@ -16,8 +16,8 @@ ScavTrap::ScavTrap(char const *name) {
 
     this->_melee_attack_dmg = 20;
     this->_ranged_attack_dmg = 15;
-    this->_armor_dmg_reduction = ARMOR_SCAV;
-    this->_initial_armor = ARMOR_SCAV;
+    this->_armor_dmg_reduction = 3;
+    this->_initial_armor = 3;
 };
 
 ScavTrap::~ScavTrap() {
