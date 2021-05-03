@@ -30,7 +30,7 @@ FragTrap::FragTrap(FragTrap const &src) {
 }
 
 FragTrap &FragTrap::operator=(FragTrap const &src) {
-    std::cout << "<Assignation operator called>" << std::endl; 
+    std::cout << "<assignation operator called>" << std::endl; 
     if (this != &src)
     {
         this->_hit_points = src._hit_points;

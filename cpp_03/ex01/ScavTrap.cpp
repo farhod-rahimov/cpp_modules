@@ -30,7 +30,7 @@ ScavTrap::ScavTrap(ScavTrap const &src) {
 }
 
 ScavTrap &ScavTrap::operator=(ScavTrap const &src) {
-    std::cout << "<Assignation operator called>" << std::endl; 
+    std::cout << "<assignation operator called>" << std::endl; 
     if (this != &src)
     {
         this->_hit_points = src._hit_points;
