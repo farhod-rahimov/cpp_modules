@@ -45,6 +45,26 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &src) {
     return (*this);
 };
 
+void ScavTrap::rangedAttack(std::string const & target) {
+    if (this->_hit_points <= 0)
+    {
+        std::cout << "ScavTrap: Cannot do RANGED ATTACK attack because ScavTrap IS DEAD! <rangedAttack>"<< std::endl;
+        return ;
+    }
+    std::cout << "ScavTrap: Babakh...! ScavTrap <" << this->_name << "> attacks <" \
+    << target << "> at RANGE, causing <" << this->_ranged_attack_dmg << "> points of damage! <rangedAttack>" << std::endl;
+};
+
+void ScavTrap::meleeAttack(std::string const & target) {
+    if (this->_hit_points <= 0)
+    {
+        std::cout << "ScavTrap: Cannot do MELEE attack because ScavTrap IS DEAD! <melleAttack>"<< std::endl;
+        return ;
+    }
+    std::cout << "ScavTrap: Baauumm...! ScavTrap <" << this->_name << "> attacks <" \
+    << target << "> at MELEE, causing <" << this->_melee_attack_dmg << "> points of damage! <meleeAttack>" << std::endl;
+};
+
 void ScavTrap::challengeNewcomer(std::string const & target) {
     char const      argv[5][26] = {"Can you beat me?", "Come on boy!", "Can you hit it?", \
                                     "Say goodbye to yourself!", "Men, you are very weak..."};

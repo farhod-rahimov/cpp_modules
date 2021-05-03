@@ -45,6 +45,26 @@ NinjaTrap &NinjaTrap::operator=(NinjaTrap const &src) {
     return (*this);
 };
 
+void NinjaTrap::rangedAttack(std::string const & target) {
+    if (this->_hit_points <= 0)
+    {
+        std::cout << "NinjaTrap: Cannot do RANGED ATTACK attack because NinjaTrap IS DEAD! <rangedAttack>"<< std::endl;
+        return ;
+    }
+    std::cout << "NinjaTrap: Babakh...! NinjaTrap <" << this->_name << "> attacks <" \
+    << target << "> at RANGE, causing <" << this->_ranged_attack_dmg << "> points of damage! <rangedAttack>" << std::endl;
+};
+
+void NinjaTrap::meleeAttack(std::string const & target) {
+    if (this->_hit_points <= 0)
+    {
+        std::cout << "NinjaTrap: Cannot do MELEE attack because NinjaTrap IS DEAD! <melleAttack>"<< std::endl;
+        return ;
+    }
+    std::cout << "NinjaTrap: Baauumm...! NinjaTrap <" << this->_name << "> attacks <" \
+    << target << "> at MELEE, causing <" << this->_melee_attack_dmg << "> points of damage! <meleeAttack>" << std::endl;
+};
+
 void NinjaTrap::ninjaShoebox(ScavTrap const &clap) {
     std::cout << "NinjaTrap: Param-pam-pam-pam-paaaaammmmmm... <ninjaShoebox(scavTrap)>" << std::endl;
 };
