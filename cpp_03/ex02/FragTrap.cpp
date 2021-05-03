@@ -46,6 +46,26 @@ FragTrap &FragTrap::operator=(FragTrap const &src) {
     return (*this);
 };
 
+void FragTrap::rangedAttack(std::string const & target) {
+    if (this->_hit_points <= 0)
+    {
+        std::cout << "FragTrap: Cannot do RANGED attack because FR4G-TP IS DEAD! <rangedAttack>"<< std::endl;
+        return ;
+    }
+    std::cout << "FragTrap: Bdish! FR4G-TP <" << this->_name << "> attacks <" \
+    << target << "> at RANGE, causing <" << this->_ranged_attack_dmg << "> points of damage! <rangedAttack>" << std::endl;
+};
+
+void FragTrap::meleeAttack(std::string const & target) {
+    if (this->_hit_points <= 0)
+    {
+        std::cout << "FragTrap: Cannot do MELEE attack because FR4G-TP IS DEAD! <melleAttack>"<< std::endl;
+        return ;
+    }
+    std::cout << "FragTrap: Hayaaa! FR4G-TP <" << this->_name << "> attacks <" \
+    << target << "> at MELEE, causing <" << this->_melee_attack_dmg << "> points of damage! <meleeAttack>" << std::endl;
+};
+
 void FragTrap::vaulthunter_dot_exe(std::string const & target) {
     char const      argv[5][10] = {"CHOPPER", "SMUDGE", "SMASH", "!@#$%^", "LASER"};
     unsigned int    r;
