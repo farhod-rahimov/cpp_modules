@@ -1,20 +1,20 @@
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() {
-    std::cout << "A new CLAP TRAP created. <constructor>" << std::endl;
+    std::cout << "ClapTrap: A new CLAP TRAP created. <constructor(DEFAULT)>" << std::endl;
 };
 
 ClapTrap::~ClapTrap() {
-    std::cout << "CLAP TRAP destroyed <destructor>" << std::endl;
+    std::cout << "ClapTrap: <destructor>" << std::endl;
 };
 
 ClapTrap::ClapTrap(ClapTrap const &src) {
-    std::cout << "CLAP TRAP <copy constructor> " << std::endl; 
+    std::cout << "ClapTrap: <copy constructor> " << std::endl; 
     *this = src;
 }
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &src) {
-    std::cout << "CLAP TRAP <assignation operator called>" << std::endl; 
+    std::cout << "ClapTrap: <assignation operator called>" << std::endl; 
     if (this != &src)
     {
         this->_hit_points = src._hit_points;
@@ -34,20 +34,20 @@ ClapTrap &ClapTrap::operator=(ClapTrap const &src) {
 void ClapTrap::rangedAttack(std::string const & target) {
     if (this->_hit_points <= 0)
     {
-        std::cout << "Cannot do RANGED ATTACK attack because ClapTrap IS DEAD! <rangedAttack>"<< std::endl;
+        std::cout << "ClapTrap: Cannot do RANGED ATTACK attack because ClapTrap IS DEAD! <rangedAttack>"<< std::endl;
         return ;
     }
-    std::cout << "Babakh...! ClapTrap <" << this->_name << "> attacks <" \
+    std::cout << "ClapTrap: Babakh...! ClapTrap <" << this->_name << "> attacks <" \
     << target << "> at RANGE, causing <" << this->_ranged_attack_dmg << "> points of damage! <rangedAttack>" << std::endl;
 };
 
 void ClapTrap::meleeAttack(std::string const & target) {
     if (this->_hit_points <= 0)
     {
-        std::cout << "Cannot do MELEE attack because ClapTrap IS DEAD! <melleAttack>"<< std::endl;
+        std::cout << "ClapTrap: Cannot do MELEE attack because ClapTrap IS DEAD! <melleAttack>"<< std::endl;
         return ;
     }
-    std::cout << "Baauumm...! ClapTrap <" << this->_name << "> attacks <" \
+    std::cout << "ClapTrap: Baauumm...! ClapTrap <" << this->_name << "> attacks <" \
     << target << "> at MELEE, causing <" << this->_melee_attack_dmg << "> points of damage! <meleeAttack>" << std::endl;
 };
 
@@ -55,10 +55,10 @@ void  ClapTrap::takeDamage(unsigned int amount) {
     int flag = 0;
     if (this->_hit_points <=0)
     {
-        std::cout << "ClapTrap IS DEAD! <takeDamage>"<< std::endl;
+        std::cout << "ClapTrap: ClapTrap IS DEAD! <takeDamage>"<< std::endl;
         return ;
     }
-    std::cout << "Aaaaa...!!! " << "<ClapTrap takes " << amount << " damage!>";
+    std::cout << "ClapTrap: Aaaaa...!!! " << "<ClapTrap takes " << amount << " damage!>";
     std::cout << " | HP = " << this->_hit_points << ". Armor = " << this->_armor_dmg_reduction << " <takeDamage>" << std::endl;
     if (this->_armor_dmg_reduction > 0)
     {
@@ -79,22 +79,20 @@ void  ClapTrap::takeDamage(unsigned int amount) {
         this->_hit_points -= amount;
     else if (this->_hit_points < amount && !flag)
         this->_hit_points = 0;
-
     if (this->_hit_points <= 0)
-        std::cout << "ClapTrap DYIED! <takeDamage>"<< std::endl;
+        std::cout << "ClapTrap: ClapTrap DYIED! <takeDamage>"<< std::endl;
 };
 
 void  ClapTrap::beRepaired(unsigned int amount) {
     if (this->_hit_points == this->_max_energy_points)
     {
-        std::cout << "ClapTrap HAS ALREADY BEEN FULLY REPAIRED! <beRepaired>"<< std::endl;
+        std::cout << "ClapTrap: ClapTrap HAS ALREADY BEEN FULLY REPAIRED! <beRepaired>"<< std::endl;
         return ;
     }
     if (this->_hit_points + amount >= this->_max_energy_points)
         this->_hit_points = this->_max_energy_points;
     else
         this->_hit_points += amount;
-    std::cout << "Yeahhh boy...!!! <ClapTrap HAS BEEN REPAIRED to " << amount << " HPs!>";
+    std::cout << "ClapTrap: Yeahhh boy...!!! <ClapTrap HAS BEEN REPAIRED to " << amount << " HPs!>";
     std::cout << " | HP = " << this->_hit_points << ". Armor = " << this->_armor_dmg_reduction << " <beRepaired>"<< std::endl;
-
 };
