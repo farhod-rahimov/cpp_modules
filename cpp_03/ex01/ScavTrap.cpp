@@ -1,6 +1,7 @@
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap() {
+    std::cout << "ScavTrap: Hi there! <constructor(DEFAULT>" << std::endl;
 };
 
 ScavTrap::ScavTrap(char const *name) {

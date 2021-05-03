@@ -1,6 +1,7 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap() {
+    std::cout << "FragTrap: Hey everybody! <constructor(DEFAULT)>" << std::endl;
 };
 
 FragTrap::FragTrap(char const *name) {

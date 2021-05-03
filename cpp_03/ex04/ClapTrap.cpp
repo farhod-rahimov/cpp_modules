@@ -90,12 +90,10 @@ void  ClapTrap::takeDamage(unsigned int amount) {
         this->_hit_points -= amount - this->_initial_armor;
     else if (this->_hit_points < amount - this->_initial_armor && flag)
         this->_hit_points = 0;
-    
     else if (this->_hit_points >= amount && !flag)
         this->_hit_points -= amount;
     else if (this->_hit_points < amount && !flag)
         this->_hit_points = 0;
-
     if (this->_hit_points <= 0)
         std::cout << "ClapTrap: ClapTrap DYIED! <takeDamage>"<< std::endl;
 };
@@ -112,5 +110,4 @@ void  ClapTrap::beRepaired(unsigned int amount) {
         this->_hit_points += amount;
     std::cout << "ClapTrap: Yeahhh boy...!!! <ClapTrap HAS BEEN REPAIRED to " << amount << " HPs!>";
     std::cout << " | HP = " << this->_hit_points << ". Armor = " << this->_armor_dmg_reduction << " <beRepaired>"<< std::endl;
-
 };
