@@ -34,9 +34,19 @@ void main_my(void)
     std::cout << "MARK POLYMORPHED ALL VICTIMS" << std::endl << std::endl;
 }
 
+void main_destr(void)
+{
+    Dog *child = new Dog("Alex");
+    Victim *parent = child;
+    delete parent; // если бы деструкторы были не виртуальными,
+                   // то в данном случае вызвался бы деструктор только родителя
+                   // а ребенок остался бы неуничтоженным
+}
+
 int main()
 {
-    main_subj();
+    // main_subj();
     // main_my();
+    main_destr();
     return 0;
 }
