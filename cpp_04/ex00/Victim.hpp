@@ -10,7 +10,7 @@ protected:
 
 public:
     Victim(char const *name);
-    ~Victim();
+    virtual ~Victim();
     Victim(Victim const &src);
 
     Victim &operator=(Victim const &src);

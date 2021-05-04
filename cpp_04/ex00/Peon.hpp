@@ -10,7 +10,7 @@ private:
 
 public:
     Peon(char const *name);
-    ~Peon();
+    virtual ~Peon();
     Peon(Peon const &src);
 
     Peon &operator=(Peon const &src);

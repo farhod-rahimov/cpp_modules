@@ -10,7 +10,7 @@ private:
 
 public:
     Dog(char const *name);
-    ~Dog();
+    virtual ~Dog();
     Dog(Dog const &src);
 
     Dog &operator=(Dog const &src);
