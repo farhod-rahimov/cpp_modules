@@ -16,8 +16,8 @@ public:
     
     Enemy &operator=(Enemy const &src);
 
-    std::string getType() const; //std::string [...] getType() const
-    int         getHP() const;
+    std::string  getType() const;
+    int          getHP() const;
     virtual void takeDamage(int);
 };
 

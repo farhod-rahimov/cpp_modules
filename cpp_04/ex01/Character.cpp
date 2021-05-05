@@ -35,16 +35,19 @@ void Character::recoverAP() {
 };
 
 void Character::attack(Enemy *enemy) {
-    if (enemy == NULL || enemy->getHP() < 0 || this->w == NULL)
+    if (enemy == NULL || enemy->getHP() <= 0 || this->w == NULL)
         return ;
     if (this->_ap < this->w->getAPCost())
         return ;
     else
         this->_ap -= this->w->getAPCost();
+    
     std::cout << this->getName() << " attacks " << enemy->getType() << " with a " \
     << this->w->getName() << std::endl;
-    w->attack();
+    
+    this->w->attack();
     enemy->takeDamage(this->w->getDamage());
+    
     if (enemy->getHP() <= 0)
         delete enemy;
 };

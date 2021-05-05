@@ -23,7 +23,7 @@ public:
     void equip(AWeapon*);
     void attack(Enemy*);
     
-    std::string getName() const; //std::string [...] getName() const;
+    std::string getName() const;
     std::string getWeaponName() const;
     int         getAP() const;
 };

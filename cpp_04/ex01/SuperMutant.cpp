@@ -25,6 +25,8 @@ void SuperMutant::takeDamage(int amount) {
     amount -= 3;
     if (amount < 0)
         return ;
+    else if (amount > this->_hp)
+        this->_hp = 0;
     else
         this->_hp -= amount;
 };

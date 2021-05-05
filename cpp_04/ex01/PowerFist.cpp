@@ -17,7 +17,6 @@ PowerFist &PowerFist::operator=(PowerFist const &src) {
         this->_damage = src._damage;
         this->_apcost = src._apcost;
     }
-    std::cout << "gere2\n";
     return (*this);
 };
 

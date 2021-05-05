@@ -17,7 +17,7 @@ public:
     
     AWeapon &operator=(AWeapon const &src);
 
-    std::string  getName() const; // перед getName [...]
+    std::string  getName() const;
     int          getAPCost() const;
     int          getDamage() const;
     virtual void attack() const = 0;

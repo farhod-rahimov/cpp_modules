@@ -72,6 +72,9 @@ void main_rad_scorpion()
     std::cout << *me;
     
     Enemy* b = new RadScorpion();
+    std::cout << std::endl << "----ENEMY----" << std::endl;
+    std::cout << "Enemy's HP " << b->getHP() << " Enemy's TYPE " << b->getType() << std::endl;
+    std::cout << "---------------" << std::endl << std::endl;
     
     AWeapon* pr = new PlasmaRifle();
     AWeapon* pf = new PowerFist();

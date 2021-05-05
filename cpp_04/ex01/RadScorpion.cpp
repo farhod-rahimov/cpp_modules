@@ -20,11 +20,3 @@ RadScorpion &RadScorpion::operator=(RadScorpion const &src) {
     }
     return (*this);
 };
-
-void RadScorpion::takeDamage(int amount) {
-    amount -= 3;
-    if (amount < 0)
-        return ;
-    else
-        this->_hp -= amount;
-};
