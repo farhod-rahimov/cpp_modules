@@ -18,6 +18,7 @@ Squad::~Squad() {
 };
 
 Squad::Squad(Squad const &src) {
+    this->_units = NULL;
     *this = src;
 };
 
