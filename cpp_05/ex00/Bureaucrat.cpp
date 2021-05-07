@@ -4,10 +4,10 @@ Bureaucrat::Bureaucrat() {
 };
 
 Bureaucrat::Bureaucrat(char const *name, int grade) {
-    if (grade < 1)
-        throw (Bureaucrat::GradeTooHighException());
-    else if (grade > 150)
-        throw (Bureaucrat::GradeTooLowException());
+    if (grade < HIGH_LVL)
+        throw (Bureaucrat::GradeTooHighException("Cannot create create Bureaucrat class because the second parameter GRADE is LESS than 1"));
+    else if (grade > LOW_LVL)
+        throw (Bureaucrat::GradeTooHighException("Cannot create create Bureaucrat class because the second parameter GRADE is GREATER than 150"));
     this->_name = name;
     this->_grade = grade;
 };
@@ -28,12 +28,21 @@ Bureaucrat &Bureaucrat::operator=(Bureaucrat const &src) {
     return (*this);
 };
 
+Bureaucrat::GradeTooHighException::GradeTooHighException(std::string err_msg) {
+    this->_err_msg = err_msg.c_str();
+};
+
+
 char const *Bureaucrat::GradeTooHighException::what() const throw () {
-    return (HIGH_MSG);
+    return (this->_err_msg);
+};
+
+Bureaucrat::GradeTooLowException::GradeTooLowException(std::string err_msg) {
+    this->_err_msg = err_msg.c_str();
 };
 
 char const *Bureaucrat::GradeTooLowException::what() const throw () {
-    return (LOW_MSG);
+    return (this->_err_msg);
 };
 
 std::string const Bureaucrat::getName(void) const {
@@ -46,14 +55,14 @@ int Bureaucrat::getGrade(void) const {
 
 void Bureaucrat::increment(void) {
     if (this->_grade == HIGH_LVL)
-        throw (Bureaucrat::GradeTooHighException());
+        throw (Bureaucrat::GradeTooHighException("Cannot increment because the grade is already in the HIGHEST level"));
     else
         this->_grade--;
 };
 
 void Bureaucrat::decrement(void) {
     if (this->_grade == LOW_LVL)
-        throw (Bureaucrat::GradeTooLowException());
+        throw (Bureaucrat::GradeTooLowException("Cannot decrement because the grade is already in the LOWEST level"));
     else
         this->_grade++;
 };

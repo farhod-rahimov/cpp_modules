@@ -3,9 +3,6 @@
 
 # define HIGH_LVL   1
 # define LOW_LVL    150
-# define HIGH_MSG   "Cannot increment because the grade is already in the HIGHEST level"
-# define LOW_MSG    "Cannot decrement because the grade is already in the LOWEST level"
-
 
 #include <iostream>
 
@@ -23,11 +20,22 @@ public:
     Bureaucrat &operator=(Bureaucrat const &src);
 
     class GradeTooHighException : public std::exception {
+        private: 
+            // std::string _err_msg;
+            char const *_err_msg;
+            GradeTooHighException();
+
         public:
+            GradeTooHighException(std::string err_msg);
             virtual char const *what() const throw();
     };
     class GradeTooLowException : public std::exception {
+        private:
+            char const *_err_msg;
+            GradeTooLowException();
+
         public:
+            GradeTooLowException(std::string err_msg);
             virtual char const *what() const throw();
     };
 

@@ -30,9 +30,24 @@ void catch_high(void)
         std::cerr << e.what() << std::endl;
     }
 }
+void catch_constr(void)
+{
+    try
+    {
+        // Bureaucrat bu("bu_name", 150);
+        // Bureaucrat bu("bu_name", 151);
+        // Bureaucrat bu("bu_name", 1);
+        Bureaucrat bu("bu_name", 0);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+}
 
 int main()
 {
     // catch_high();
-    catch_low();
+    // catch_low();
+    catch_constr();
 }
