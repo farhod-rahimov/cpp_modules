@@ -19,6 +19,7 @@ Squad::~Squad() {
 
 Squad::Squad(Squad const &src) {
     this->_units = NULL;
+    this->_count = 0;
     *this = src;
 };
 
