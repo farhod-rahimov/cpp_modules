@@ -65,12 +65,16 @@ int Squad::getCount() const {
 ISpaceMarine *Squad::getUnit(int N) const {
     t_units *tmp;
     
-    if (N > this->_count)
+    if (N > this->_count || N < 0)
         return (NULL);
     tmp = this->_units;
-    for (int i = 1; i < N; i++)
+    for (int i = 0; i < this->_count; i++)
+    {
+        if (i == N)
+            return (tmp->_unit);
         tmp = tmp->next;
-    return (tmp->_unit);
+    }
+    return (NULL);
 };
 
 int check_if_unit_in_the_squad(t_units *tmp, ISpaceMarine *unit) {

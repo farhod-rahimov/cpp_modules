@@ -149,6 +149,24 @@ void check_copy_constructor(void)
     std::cout << "******SQUAD_2. The number of SPACE MARINES " << squad_2.getCount() << std::endl << std::endl;
 }
 
+#define UNITS 2
+
+void    check_errors()
+{
+    Squad squad;
+    squad.push(new TacticalMarine);
+    squad.push(new AssaultTerminator);
+    std::cout << squad.getUnit(0) << std::endl;
+    std::cout << squad.getUnit(1) << std::endl;
+    std::cout << squad.getCount() << std::endl;
+    std::cout << squad.getCount() << " -> " << squad.push(NULL) << std::endl;
+    std::cout << squad.getCount() << " -> " << squad.push(squad.getUnit(UNITS - 1)) << std::endl;
+    std::cout << squad.getCount() << " -> " << squad.push(squad.getUnit(UNITS)) << std::endl;
+    std::cout << squad.getCount() << " -> " << squad.push(squad.getUnit(UNITS + 1)) << std::endl;
+    std::cout << squad.getUnit(-1) << std::endl;
+    std::cout << squad.getUnit(10000) << std::endl;
+}
+
 int main()
 {
     // main_subj();
@@ -156,7 +174,8 @@ int main()
     // check_push();
     // check_clone();
     // check_assign();
-    check_copy_constructor();
+    // check_copy_constructor();
+    check_errors();
 
     // while (1)
     //     ;
