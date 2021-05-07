@@ -35,9 +35,9 @@ void catch_constr(void)
     try
     {
         // Bureaucrat bu("bu_name", 150);
-        // Bureaucrat bu("bu_name", 151);
+        Bureaucrat bu("bu_name", 151);
         // Bureaucrat bu("bu_name", 1);
-        Bureaucrat bu("bu_name", 0);
+        // Bureaucrat bu("bu_name", 0);
     }
     catch(const std::exception& e)
     {

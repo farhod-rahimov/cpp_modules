@@ -21,7 +21,6 @@ public:
 
     class GradeTooHighException : public std::exception {
         private: 
-            // std::string _err_msg;
             char const *_err_msg;
             GradeTooHighException();
 

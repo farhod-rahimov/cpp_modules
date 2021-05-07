@@ -5,9 +5,9 @@ Bureaucrat::Bureaucrat() {
 
 Bureaucrat::Bureaucrat(char const *name, int grade) {
     if (grade < HIGH_LVL)
-        throw (Bureaucrat::GradeTooHighException("Cannot create create Bureaucrat class because the second parameter GRADE is LESS than 1"));
+        throw (Bureaucrat::GradeTooHighException("Cannot create create Bureaucrat object because the second parameter GRADE is LESS than 1"));
     else if (grade > LOW_LVL)
-        throw (Bureaucrat::GradeTooHighException("Cannot create create Bureaucrat class because the second parameter GRADE is GREATER than 150"));
+        throw (Bureaucrat::GradeTooHighException("Cannot create create Bureaucrat object because the second parameter GRADE is GREATER than 150"));
     this->_name = name;
     this->_grade = grade;
 };
@@ -55,14 +55,14 @@ int Bureaucrat::getGrade(void) const {
 
 void Bureaucrat::increment(void) {
     if (this->_grade == HIGH_LVL)
-        throw (Bureaucrat::GradeTooHighException("Cannot increment because the grade is already in the HIGHEST level"));
+        throw (Bureaucrat::GradeTooHighException("Cannot increment because the grade is already at the HIGHEST level"));
     else
         this->_grade--;
 };
 
 void Bureaucrat::decrement(void) {
     if (this->_grade == LOW_LVL)
-        throw (Bureaucrat::GradeTooLowException("Cannot decrement because the grade is already in the LOWEST level"));
+        throw (Bureaucrat::GradeTooLowException("Cannot decrement because the grade is already at the LOWEST level"));
     else
         this->_grade++;
 };
