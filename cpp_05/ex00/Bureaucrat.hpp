@@ -38,5 +38,6 @@ public:
     void                decrement(void);
 };
 
+std::ostream &operator<<(std::ostream &o, Bureaucrat const &src);
 
 #endif

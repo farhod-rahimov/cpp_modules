@@ -3,6 +3,7 @@
 void catch_low(void)
 {
     Bureaucrat bu("bu_name", 100);
+    std::cout << bu;
     try
     {
         for (int i = 100; i <= 151; ++i)
@@ -17,6 +18,7 @@ void catch_low(void)
 void catch_high(void)
 {
     Bureaucrat bu("bu_name", 100);
+    std::cout << bu;
     try
     {
         for (int i = 100; i >= 0; --i)
@@ -28,25 +30,9 @@ void catch_high(void)
         std::cerr << e.what() << std::endl;
     }
 }
-void catch_constr(void)
-{
-    try
-    {
-        // Bureaucrat bu("bu_name", 150);
-        // Bureaucrat bu("bu_name", 151);
-        // Bureaucrat bu("bu_name", 1);
-        Bureaucrat bu("bu_name", 0);
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    
-}
 
 int main()
 {
-    catch_high();
-    // catch_low();
-    // catch_constr();
+    // catch_high();
+    catch_low();
 }
