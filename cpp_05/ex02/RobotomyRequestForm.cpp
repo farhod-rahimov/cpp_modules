@@ -19,9 +19,15 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &s
     return (*this);
 };
 
-void RobotomyRequestForm::_beExecuted(void) const {
-    std::cout << "Wwrrrrrr... Wshhhhhhhh... " << this->_target << \
-        " has been robotomized successfully 50% of the time" << std::endl;
+void RobotomyRequestForm::_beExecuted(Bureaucrat const & executor) const {
+    if (executor.getGrade() <= this->getExecuteGrade())
+    {
+        std::cout << "Wwrrrrrr... Wshhhhhhhh... " << this->_target << \
+            " has been robotomized successfully 50% of the time" << std::endl;
+
+    }
+    else
+        std::cout << "Piiiii... Pipip...." << std::endl;
 };
 
 std::string RobotomyRequestForm::getTarget(void) const {
