@@ -15,33 +15,39 @@ Intern &Intern::operator=(Intern const &src) {
     return (*this);
 };
 
-Intern::FormDoesntExistException::FormDoesntExistException(std::string err_msg) {
-    this->_err_msg = err_msg.c_str();
+Intern::FormDoesntExistException::FormDoesntExistException(char const *formName) {
+    this->_formName = formName;
 };
 
 char const *Intern::FormDoesntExistException::what() const throw () {
-    return (this->_err_msg);
+    const char *err_msg;
+    std::string tmp;
+
+    tmp = "The form '"; tmp += this->_formName; tmp += "' doesn't exist";
+    err_msg = tmp.c_str();
+    return (err_msg);
 };
 
-
-Form *Intern::findForm(std::string formName, std::string targetName) {
+Form *Intern::findForm(const char *formName, const char *targetName) {
     Form *ptr;
+    std::string tmp;
 
+    tmp = formName;
     const char  *array[4] = {"robotomy request", "shrubbery creation", "presidential pardon", NULL};
     for (int i = 0; array[i]; i++)
     {
-        if (formName.compare(array[i]) == 0 && i == 0)
+        if (tmp.compare(array[i]) == 0 && i == 0)
             return (ptr = new RobotomyRequestForm(formName, targetName));
-        else if (formName.compare(array[i]) == 0 && i == 1)
+        else if (tmp.compare(array[i]) == 0 && i == 1)
             return (ptr = new ShrubberyCreationForm(formName, targetName));
-        else if (formName.compare(array[i]) == 0 && i == 2)
+        else if (tmp.compare(array[i]) == 0 && i == 2)
             return (ptr = new PresidentialPardonForm(formName, targetName));
     }
-    throw (Intern::FormDoesntExistException(formName.c_str()));
+    throw (Intern::FormDoesntExistException(formName));
     return (NULL);
 };
 
-Form *Intern::makeForm(std::string formName, std::string targetName) {
+Form *Intern::makeForm(const char *formName, const char *targetName) {
     Form *ptr;
     
     ptr = this->findForm(formName, targetName);

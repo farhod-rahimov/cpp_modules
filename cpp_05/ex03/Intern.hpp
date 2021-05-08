@@ -16,16 +16,16 @@ public:
     
     class FormDoesntExistException : public std::exception {
         private:
-            char const *_err_msg;
+            char const *_formName;
             FormDoesntExistException();
 
         public:
-            FormDoesntExistException(std::string err_msg);
+            FormDoesntExistException(char const *formName);
             virtual char const *what() const throw();
     };
 
-    Form *makeForm(std::string formName, std::string targetName);
-    Form *findForm(std::string formName, std::string targetName);
+    Form *makeForm(const char *formName, const char *targetName);
+    Form *findForm(const char *formName, const char *targetName);
 };
 
 #endif
