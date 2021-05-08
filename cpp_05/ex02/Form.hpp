@@ -11,7 +11,7 @@ private:
     int const           _signGrade;
     int const           _executeGrade;
     bool                _isFormSigned;
-    virtual void        _beExecuted(void) const;
+    virtual void        _beExecuted(Bureaucrat const & executor) const;
     Form();
 
 public:

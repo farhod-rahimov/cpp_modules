@@ -81,7 +81,10 @@ void Form::beSigned(Bureaucrat & b) {
         this->_isFormSigned = true;
 };
 
-void Form::_beExecuted(void) const {
+void Form::_beExecuted(Bureaucrat const & executor) const {
+    Bureaucrat const *tmp = &executor;
+    if (tmp == NULL)
+        return ;
 };
 
 void Form::execute(Bureaucrat const & executor) const {
@@ -94,7 +97,7 @@ void Form::execute(Bureaucrat const & executor) const {
         std::cout << executor.getName() << " cannot execute " << this->_name \
             << " because he has no grade enough" << std::endl;
     if (executor.getGrade() <= this->_executeGrade)
-        this->_beExecuted();
+        this->_beExecuted(executor);
 };
 
 std::ostream &operator<<(std::ostream & o, Form const & src) {
