@@ -22,6 +22,9 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm co
 };
 
 void ShrubberyCreationForm::_beExecuted(Bureaucrat const & executor) const {
+    Bureaucrat const *tmp = &executor;
+    if (tmp == NULL)
+        return ;
     if (executor.getGrade() > this->getExecuteGrade())
         return ;
     std::string ofs_name;

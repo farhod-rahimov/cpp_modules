@@ -69,6 +69,9 @@ bool  Form::getIsFormSigned(void) const {
 };
 
 void Form::beSigned(Bureaucrat & b) {
+    Bureaucrat *tmp = &b;
+    if (tmp == NULL)
+        return ;
     if (this->_isFormSigned == true)
         return ;
     b.signForm(*this);

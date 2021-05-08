@@ -71,6 +71,9 @@ bool  Form::getIsFormSigned(void) const {
 };
 
 void Form::beSigned(Bureaucrat & b) {
+    Bureaucrat *tmp = &b;
+    if (tmp == NULL)
+        return ;
     if (this->_isFormSigned == true)
         return ;
     b.signForm(*this);
@@ -82,6 +85,9 @@ void Form::_beExecuted(void) const {
 };
 
 void Form::execute(Bureaucrat const & executor) const {
+    Bureaucrat const *tmp = &executor;
+    if (tmp == NULL)
+        return ;
     if (executor.getGrade() <= this->_executeGrade)
         std::cout << executor.getName() << " executes " << this->_name << std::endl;
     else

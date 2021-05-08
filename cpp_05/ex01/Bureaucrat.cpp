@@ -68,6 +68,9 @@ void Bureaucrat::decrement(void) {
 };
 
 void Bureaucrat::signForm(Form & f) {
+    Form *tmp = &f;
+    if (tmp == NULL)
+        return ;
     if (f.getIsFormSigned())
         return ;
     else if (this->_grade <= f.getSignGrade())

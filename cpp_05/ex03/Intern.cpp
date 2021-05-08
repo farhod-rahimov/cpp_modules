@@ -50,6 +50,11 @@ Form *Intern::findForm(const char *formName, const char *targetName) {
 Form *Intern::makeForm(const char *formName, const char *targetName) {
     Form *ptr;
     
+    if (formName == NULL || targetName == NULL)
+    {
+        throw (Intern::FormDoesntExistException("NULL"));
+        return (NULL);
+    }
     ptr = this->findForm(formName, targetName);
         return (ptr);
 };

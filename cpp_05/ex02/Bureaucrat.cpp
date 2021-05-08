@@ -68,6 +68,9 @@ void Bureaucrat::decrement(void) {
 };
 
 void Bureaucrat::signForm(Form & f) {
+    Form *tmp = &f;
+    if (tmp == NULL)
+        return ;
     if (f.getIsFormSigned())
         return ;
     else if (this->_grade <= f.getSignGrade())
@@ -78,6 +81,9 @@ void Bureaucrat::signForm(Form & f) {
 };
 
 void Bureaucrat::executeForm(Form const & f) const {
+    Form const *tmp = &f;
+    if (tmp == NULL)
+        return ;
     f.execute(*this);
 };
 

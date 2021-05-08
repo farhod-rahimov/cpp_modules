@@ -20,6 +20,9 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(RobotomyRequestForm const &s
 };
 
 void RobotomyRequestForm::_beExecuted(Bureaucrat const & executor) const {
+    Bureaucrat const *tmp = &executor;
+    if (tmp == NULL)
+        return ;
     if (executor.getGrade() <= this->getExecuteGrade())
     {
         std::cout << "Wwrrrrrr... Wshhhhhhhh... " << this->_target << \

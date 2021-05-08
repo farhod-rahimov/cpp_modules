@@ -13,18 +13,18 @@ void main_f(void)
     Form* p;
     Form* r;
     Form* s;
-    // Form* error;
+    Form* error;
 
     try {
         p = someRandomIntern.makeForm("presidential pardon", "punishment");
         r = someRandomIntern.makeForm("robotomy request", "Bender");
         s = someRandomIntern.makeForm("shrubbery creation", "home");
-        // error = someRandomIntern.makeForm("presidentiaaaaal pardon", "punishment");
+        error = someRandomIntern.makeForm("presidentiaaaaal pardon", "punishment");
     }
     catch (std::exception & e)
     {
         std::cerr << e.what() << std::endl;
-        exit(1);
+        // exit(1);
     }
     bu.signForm(*r);
     bu.signForm(*s);
@@ -32,6 +32,7 @@ void main_f(void)
     bu.executeForm(*r);
     bu.executeForm(*s);
     bu.executeForm(*p);
+    bu.executeForm(*error);
     
     delete p; delete r; delete s;
 }
