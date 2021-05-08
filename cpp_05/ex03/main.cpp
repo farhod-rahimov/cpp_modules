@@ -5,7 +5,7 @@
 #include "RobotomyRequestForm.hpp"
 #include "Intern.hpp"
 
-void main_exist(void)
+int main(void)
 {
     Bureaucrat bu("ALEX", 1);
 
@@ -13,16 +13,18 @@ void main_exist(void)
     Form* p;
     Form* r;
     Form* s;
+    Form* error;
 
     try {
         r = someRandomIntern.makeForm("robotomy request", "Bender");
         s = someRandomIntern.makeForm("shrubbery creation", "home");
-        // p = someRandomIntern.makeForm("presidential pardon", "punishment");
-        p = someRandomIntern.makeForm("presidentiaaaaal pardon", "punishment");
+        p = someRandomIntern.makeForm("presidential pardon", "punishment");
+        error = someRandomIntern.makeForm("presidentiaaaaal pardon", "punishment");
     }
     catch (std::exception & e)
     {
         std::cerr << e.what() << std::endl;
+        return (1);
     }
     // bu.signForm(*r);
     // bu.signForm(*s);
@@ -30,14 +32,5 @@ void main_exist(void)
     // bu.executeForm(*r);
     // bu.executeForm(*s);
     // bu.executeForm(*p);
-}
-
-void main_not_exist(void)
-{
-
-}
-
-int main()
-{
-    main_exist();
+    return (0);
 }
