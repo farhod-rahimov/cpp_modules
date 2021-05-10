@@ -4,10 +4,15 @@ int workWithDigit(char **argv, Functions & funcs)
 {
     int i; char c; float f; double d;
 
-    i = std::stoi(argv[1], 0, 10);
-    c = static_cast<char>(i);
-    f = std::stof(argv[1], 0);
-    d = std::stod(argv[1], 0);
+    try {
+        i = std::stoi(argv[1], 0, 10);
+        c = static_cast<char>(i);
+        f = std::stof(argv[1], 0);
+        d = std::stod(argv[1], 0);
+    }
+    catch (std::out_of_range & e) {
+        std::cout << e.what() << std::endl; return (1);
+    }
     if (!funcs.isPrintable(c))
         std::cout << "char: not displayable" << std::endl;
     else
