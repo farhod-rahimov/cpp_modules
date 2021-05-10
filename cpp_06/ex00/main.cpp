@@ -11,8 +11,8 @@ int main(int argc, char **argv)
 
     if (argc != 2)
         return (funcs.printError(WRNG_NUM_ARG));
-    else if (funcs.getError(argv[1]) && !funcs.isDigit(argv[1][0]) && argv[1][0] != '-' && argv[1][0] != '+' \
-            && argv[1][1] && !funcs.findException(argv[1]))
+    else if (funcs.getError(argv[1]) || (!funcs.isDigit(argv[1][0]) && argv[1][0] != '-' && argv[1][0] != '+' \
+            && argv[1][1] && !funcs.findException(argv[1])))
         return (funcs.printError(INVALID_ARG));
 
     if (funcs.isDigit(argv[1][0]))

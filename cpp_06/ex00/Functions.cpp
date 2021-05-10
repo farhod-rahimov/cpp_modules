@@ -68,9 +68,12 @@ int Functions::getError(char *s) const {
             dot = 1;
         }
     }
+    
     if (tmp_i == i && this->findException(s))
         return (0);
     else if (!s[i] || (s[i] == 'f' && !s[i + 1]))
+        return (0);
+    else if (tmp_i == i && s[i] && !s[i + 1])
         return (0);
 
     return (1);
