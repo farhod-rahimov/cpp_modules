@@ -6,15 +6,15 @@
 
 struct Data;
 
-char const * getRandomString(int increaseRandom);
+std::string getRandomString(int increaseRandom);
 void * serialize(void);
 Data * deserialize(void * raw);
 
 struct Data
 {
     int         i;
-    const char  *s1;
-    const char  *s2;
+    std::string s1;
+    std::string s2;
 };
 
 #endif
