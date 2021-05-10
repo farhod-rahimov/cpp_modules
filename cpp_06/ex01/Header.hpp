@@ -4,6 +4,12 @@
 #include <iostream>
 #include <time.h>
 
+struct Data;
+
+char const * getRandomString(int increaseRandom);
+void * serialize(void);
+Data * deserialize(void * raw);
+
 struct Data
 {
     int         i;
