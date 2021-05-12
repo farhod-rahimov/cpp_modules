@@ -70,6 +70,19 @@ void STRING()
     std::cout << "---------------------------------" << std::endl;
 }
 
+void BOOL()
+{
+    bool a = true;
+    bool b = false;
+
+    std::cout << "Initial a = " << a << ", b = " << b << std::endl;
+    std::cout << "---------------------------------" << std::endl;
+    swap(a, b);
+    std::cout << "After SWAP a = " << a << ", b = " << b << std::endl;
+    std::cout << "The MAX value is " << max(a, b) << std::endl;
+    std::cout << "The MIN value is " << min(a, b) << std::endl;
+    std::cout << "---------------------------------" << std::endl;
+}
 
 void subj()
 {
@@ -97,6 +110,9 @@ int main()
     // FLOAT();
     // DOUBLE();
     // CHAR();
-    STRING();
+    // STRING();
+    // BOOL();
+
+
     // subj();
 }
