@@ -6,11 +6,11 @@ void main_1()
     Array<int> intArray2(10);
 
     std::cout << "Initialized intArray1 and intArray2" << std::endl;
-    std::cout << "The sie of intArray1 is " << intArray1.size() << std::endl;
-    std::cout << "The sie of intArray2 is " << intArray2.size() << std::endl << std::endl;
+    std::cout << "The size of intArray1 is " << intArray1.size() << std::endl;
+    std::cout << "The size of intArray2 is " << intArray2.size() << std::endl << std::endl;
 
     try {
-        std::cout << "Trying to print the 1 element of intArray1, which doesn't exist" << std::endl;
+        std::cout << "Trying to print the 100 element of intArray1, which doesn't exist" << std::endl;
         std::cout << intArray1[100];
     }
     catch (std::exception & e){
