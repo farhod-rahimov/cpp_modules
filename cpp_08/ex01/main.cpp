@@ -73,9 +73,9 @@ void main_5()
     Span sp(10);
  
     try {
-        sp.addNumber(1);
+        sp.addNumber(0);
         sp.addNumber(6);
-        sp.addNumber(5);
+        sp.addNumber(0);
         sp.addNumber(134);
         sp.addNumber(1900);
         std::cout << "Trying calculate shortestSpan and longestSpan in array with only 5 values" << std::endl;
