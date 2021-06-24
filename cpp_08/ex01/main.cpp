@@ -1,5 +1,19 @@
 #include "span.hpp"
 
+void main_subj()
+{
+    Span sp = Span(5);
+
+    sp.addNumber(5);
+    sp.addNumber(3);
+    sp.addNumber(17);
+    sp.addNumber(9);
+    sp.addNumber(11);
+
+    std::cout << sp.shortestSpan() << std::endl;
+    std::cout << sp.longestSpan() << std::endl;
+}
+
 void main_1()
 {
     Span sp(10);
@@ -75,9 +89,10 @@ void main_5()
 
 int main()
 {
+    main_subj();
     // main_1();
     // main_2();
     // main_3();
     // main_4();
-    main_5();
+    // main_5();
 }

@@ -27,22 +27,58 @@ Span &Span::operator=(Span const &src) {
 };
 
 void Span::addNumber(int number) {
-    if (_array.size() < _max_num_values)
+    if (_array.size() == 0 && _array.size() < _max_num_values)
     {
         _array.push_back(number);
-        if (_array.size() == 1)
-            _min_value_1 = number;
-        else if (_array.size() == 2)
-            _min_value_2 = number;
-        else if (_array.size() == 3)
-            _max_value = number;
+        _min_value_1 = number;
+    }
+    else if (_array.size() == 1 && _array.size() < _max_num_values)
+    {
+        _array.push_back(number);
 
         if (number < _min_value_1)
+        {
+            _min_value_2 = _min_value_1;
             _min_value_1 = number;
-        else if (number < _min_value_2 && number != _min_value_1)
+        }
+        else
             _min_value_2 = number;
-        else if (number > _max_value)
+    }
+    else if (_array.size() == 2 && _array.size() < _max_num_values)
+    {
+        _array.push_back(number);
+
+        if (number < _min_value_1)
+        {
+            _max_value = _min_value_2;
+            _min_value_2 = _min_value_1;
+            _min_value_1 = number;
+        }
+        else if (number < _min_value_2)
+        {
+            _max_value = _min_value_2;
+            _min_value_2 = number;
+        }
+        else
             _max_value = number;
+    }
+    else if (_array.size() < _max_num_values)
+    {
+        _array.push_back(number);
+
+        if (number < _min_value_1)
+        {
+            _min_value_2 = _min_value_1;
+            _min_value_1 = number;
+        }
+        else if (number < _min_value_2)
+        {
+            _min_value_2 = number;
+        }
+        else if (number > _max_value)
+        {
+            _max_value = number;
+        }
     }
     else
         throw(Span::SpanException("Error. Cannot add the given number. Array is FULL"));
