@@ -8,9 +8,6 @@
 class Span {
 private:
     unsigned int        _max_num_values;
-    // int                 _min_value_1;
-    // int                 _min_value_2;
-    // int                 _max_value;
     std::vector<int>    _array;
     Span();
 

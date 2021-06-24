@@ -5,9 +5,6 @@ Span::Span() {
 
 Span::Span(unsigned int N) {
     _max_num_values = N;
-    // _min_value_1 = 0;
-    // _min_value_2 = 0;
-    // _max_value = 0;
 };
 
 Span::~Span() {
