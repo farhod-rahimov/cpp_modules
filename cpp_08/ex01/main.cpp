@@ -87,6 +87,21 @@ void main_5()
     }
 }
 
+void main_6()
+{
+    Span sp(11000);
+
+    try {
+        sp.addNumber(0, 11000);
+        std::cout << "Trying calculate shortestSpan and longestSpan in array with 11000 values" << std::endl;
+        std::cout << "SHORTEST SPAN: " << sp.shortestSpan() << std::endl;
+        std::cout << "LONGEST SPAN: " << sp.longestSpan() << std::endl;
+    }
+    catch (std::exception & e) {
+        std::cerr << e.what() << std::endl;
+    }
+}
+
 int main()
 {
     main_subj();
@@ -95,4 +110,5 @@ int main()
     // main_3();
     // main_4();
     // main_5();
+    // main_6();
 }
