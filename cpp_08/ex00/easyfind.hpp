@@ -2,14 +2,13 @@
 # define EASYFIND_HPP
 
 #include <iostream>
+#include <algorithm>
+
 template<typename T>
-bool easyfind(T container, int k)
+bool easyfind(T array, int k)
 {
-    for (size_t i = 0; i < container.size(); i++)
-    {
-        if (container[i] == k)
-            return (true);
-    }
+    if (std::find(array.begin(), array.end(), k) != array.end())
+        return (true);
     return (false);
 }
 
